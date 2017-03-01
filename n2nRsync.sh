@@ -130,16 +130,6 @@ function varCheck1()
 		echo "    ERR : Source Directories conf does not exist (${dirDoProfile}/src_dirs.conf)"
 		exit 8
 	fi
-
-	if [ ! -f "${dirDoProfile}/n2nPre.sh" ]; then
-		echo "    ERR : n2nPre.sh does not exist (${dirDoProfile}/n2nPre.sh)"
-		exit 9
-	fi
-
-	if [ ! -f "${dirDoProfile}/n2nPost.sh" ]; then
-		echo "    ERR : n2nPost.sh does not exist (${dirDoProfile}/n2nPost.sh)"
-		exit 10
-	fi
 }
 
 function varCheck2()
