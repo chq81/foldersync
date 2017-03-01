@@ -220,7 +220,7 @@ function varCheck2()
 	fi
 }
 
-vBackupName=Backup_${vDate}
+vBackupName=${vProfile}_Backup_${vDate}
 
 ##
 #
@@ -235,7 +235,7 @@ dirDoProfile="${dirProfiles}/${vProfile}"
 #
 ##
 if [ "$vCron" = "yes" ]; then
-	vLogF=${dirLogs}/n2n_${vBackupName}.log
+	vLogF=${dirLogs}/${vBackupName}.log
 
 	exec > $vLogF 2>&1
 fi

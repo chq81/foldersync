@@ -1,0 +1,24 @@
+
+-----------------------------------------------
+
+   n2nBackup Script
+
+      Name: movies_Backup_2017-03-01T1418
+
+-----------------------------------------------
+
+rsync --archive --update --omit-dir-times --verbose --recursive --files-from=./profiles/movies/src_dirs.conf --exclude-from=./profiles/movies/excludes.conf /Users/christoph02/Projects/folderSync/USBShare /Users/christoph02/Projects/folderSync/Backup
+
+building file list ... done
+Test/
+Test/test.html
+
+sent 150 bytes  received 48 bytes  396.00 bytes/sec
+total size is 0  speedup is 0.00
+
+-----------------------------------------------
+
+    Backup appears to have completed (2017-03-01T1418)
+
+-----------------------------------------------
+
