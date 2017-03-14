@@ -5,3 +5,4 @@
 .idea*
 profiles/*
 !profiles/template
+logs/
