@@ -1,24 +1,5 @@
 #!/bin/bash
 
-##
-#
-# Updated:
-#
-##
-
-##
-#
-# Changes
-#
-# -
-#
-##
-
-##
-#
-#
-#
-##
 cd $(dirname $0)
 
 program=$(basename $0)
@@ -301,8 +282,10 @@ function buildOptions()
 
             [ "${folder:0:1}" = "#" ] && continue
 
-            ls -1td ${sourceFolder}/${folder}*/ | grep -v "@" | head -n ${dBackupAmount} \
+            find ${sourceFolder}/${folder}*/ -type d -newer ${sourceFolder}/${folder}backupDate.txt -printf "%T@ %p\n" | grep -v "@" | sort -n | tail -n ${dBackupAmount} \
             | sed -e "s/\(.*\)/\"\1\"/" -e "s/'/\\\'/g" | xargs -n1 basename | xargs -I {} echo ${folder}{} >> ${vTempFileDestination}
+
+        	touch ${sourceFolder}/${folder}backupDate.txt
 
         done < ${dirDoProfile}/${vFilesFromFile}
 
