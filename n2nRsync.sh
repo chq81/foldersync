@@ -282,7 +282,7 @@ function buildOptions()
 
             [ "${folder:0:1}" = "#" ] && continue
 
-            find ${sourceFolder}/${folder}*/ -type d -newer ${sourceFolder}/${folder}backupDate.txt -printf "%T@ %p\n" | grep -v "@" | sort -n | tail -n ${dBackupAmount} \
+            find ${sourceFolder}/${folder}*/ -type d -user couchpotatoserver-custom -newer ${sourceFolder}/${folder}backupDate.txt -printf "%T@ %p\n" | grep -v "@" | sort -n | tail -n ${dBackupAmount} \
             | sed -e "s/\(.*\)/\"\1\"/" -e "s/'/\\\'/g" | xargs -n1 basename | xargs -I {} echo ${folder}{} >> ${vTempFileDestination}
 
         	touch ${sourceFolder}/${folder}backupDate.txt
